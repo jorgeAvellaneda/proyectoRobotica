@@ -1,0 +1,152 @@
+MODULE Module1
+    CONST robtarget Target_10:=[[550,-378.726896031,605],[0.353553391,0.612372436,0.612372436,-0.353553391],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_20:=[[-0.000010331,170.000024041,150.000000196],[-0.000000016,0.707106781,0.707106781,-0.000000016],[-2,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_30:=[[1,173,27],[0,0.707106781,0.707106781,0],[-2,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_40:=[[2000,112.5,250],[0,0,1,0],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_50:=[[2000,112.5,40],[0,0,1,0],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_60:=[[2000,112.5,70],[0,0,1,0],[-1,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_70:=[[2000,112.5,100],[0,0,1,0],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_80:=[[2000,-117.5,250],[0,0,1,0],[0,-1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_90:=[[2000,-117.5,40],[0,0,1,0],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_100:=[[2000,-117.5,70],[0,0,1,0],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_110:=[[2000,-117.5,100],[0,0,1,0],[0,0,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    VAR num i;
+
+
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   <Insert description here>
+    !
+    ! Author: santi
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+
+
+    !***********************************************************
+    !
+    ! Procedure main
+    !
+    !   This is the entry point of your program
+    !
+    !***********************************************************
+    PROC main()
+        !Add your code here
+        Home;
+        i:=1;
+        WaitDI En_1,1;
+        WaitDI En_2,1;
+        WHILE i<=6 DO
+            Pick_H;
+            IF i=1 THEN
+                Place_1;
+                Incr i;
+            ELSEIF i=2 THEN
+
+                Place_2;
+                Incr i;
+            ELSEIF i=3 THEN
+
+                Place_3;
+                Incr i;
+            ELSEIF i=4 THEN
+
+                Place_4;
+                Incr i;
+            ELSEIF i=5 THEN
+
+                Place_5;
+                Incr i;
+            ELSEIF i=6 THEN
+
+                Place_6;
+                SetDO S_3,1;
+                WaitDI En_2,0;
+                WaitDI En_2,1;
+                SetDO S_3,0;
+                i:=1;
+            ENDIF
+        ENDWHILE
+
+
+        !        Pick_H;
+        !        Place_1;
+        !        Pick_H;
+        !        Place_2;
+        !        Pick_H;
+        !        Place_3;
+        !        Pick_H;
+        !        Place_4;
+        !        Pick_H;
+        !        Place_5;
+        !        Pick_H;
+        !        Place_6;
+
+    ENDPROC
+
+    PROC Pick_H()
+        MoveJ Target_20,v2000,z10,tVacuum\WObj:=PlatoH;
+        MoveL Target_30,v100,fine,tVacuum\WObj:=PlatoH;
+        SetDO S_1,1;
+        WaitTime 1;
+        SetDO S_1,0;
+        MoveL Target_20,v100,z10,tVacuum\WObj:=PlatoH;
+    ENDPROC
+
+    PROC Place_1()
+        MoveL Target_40,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_50,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_40,v1000,z10,tVacuum\WObj:=Principal;
+    ENDPROC
+
+    PROC Place_2()
+        MoveL Target_40,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_60,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_40,v1000,z10,tVacuum\WObj:=Principal;
+    ENDPROC
+
+    PROC Place_3()
+        MoveL Target_40,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_70,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_40,v1000,z10,tVacuum\WObj:=Principal;
+    ENDPROC
+
+    PROC Place_4()
+        MoveL Target_80,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_90,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_80,v1000,z10,tVacuum\WObj:=Principal;
+    ENDPROC
+
+    PROC Place_5()
+        MoveL Target_80,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_100,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_80,v1000,z10,tVacuum\WObj:=Principal;
+    ENDPROC
+
+    PROC Place_6()
+        MoveL Target_80,v500,z10,tVacuum\WObj:=Principal;
+        MoveL Target_110,v100,fine,tVacuum\WObj:=Principal;
+        SetDO S_2,1;
+        SetDO S_2,0;
+        MoveL Target_80,v1000,z10,tVacuum\WObj:=Principal;
+        Home;
+    ENDPROC
+
+    PROC Home()
+        MoveJ Target_10,v1000,z10,tVacuum\WObj:=PlatoH;
+    ENDPROC
+ENDMODULE
