@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
     </contributor>
-    <created>2021-08-03T02:10:30</created>
-    <modified>2021-08-03T02:10:30</modified>
+    <created>2021-08-03T02:51:04</created>
+    <modified>2021-08-03T02:51:04</modified>
     <unit name="centimeter" meter="0.01"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -82,7 +82,7 @@
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
       <node id="vaso" name="vaso" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">1.166667 0 0 0 0 1.166667 0 0 0 0 1 0 0 0 0 1</matrix>
         <instance_geometry url="#Circle_003-mesh" name="vaso">
           <bind_material>
             <technique_common>
