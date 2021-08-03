@@ -5,22 +5,22 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.92.0 commit date:2021-02-24, commit time:16:25, hash:02948a2cab44</authoring_tool>
     </contributor>
-    <created>2021-08-02T21:22:24</created>
-    <modified>2021-08-02T21:22:24</modified>
+    <created>2021-08-02T21:30:29</created>
+    <modified>2021-08-02T21:30:29</modified>
     <unit name="centimeter" meter="0.01"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_effects>
     <effect id="Material_001-effect">
       <profile_COMMON>
-        <newparam sid="Untitled-surface">
+        <newparam sid="diseñoplato_png-surface">
           <surface type="2D">
-            <init_from>Untitled</init_from>
+            <init_from>diseñoplato_png</init_from>
           </surface>
         </newparam>
-        <newparam sid="Untitled-sampler">
+        <newparam sid="diseñoplato_png-sampler">
           <sampler2D>
-            <source>Untitled-surface</source>
+            <source>diseñoplato_png-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -29,7 +29,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="Untitled-sampler" texcoord="UVMap"/>
+              <texture texture="diseñoplato_png-sampler" texcoord="UVMap"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.45</float>
@@ -40,8 +40,8 @@
     </effect>
   </library_effects>
   <library_images>
-    <image id="Untitled" name="Untitled">
-      <init_from>Untitled.png</init_from>
+    <image id="diseñoplato_png" name="diseñoplato_png">
+      <init_from>dise%C3%B1oplato.png</init_from>
     </image>
   </library_images>
   <library_materials>
